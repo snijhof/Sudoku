@@ -36,3 +36,22 @@ C:\Users\Sjoerd\Dropbox\School\Jaar3\Herkansingen\Software engineering\Sudoku-WP
 C:\Users\Sjoerd\Dropbox\School\Jaar3\Herkansingen\Software engineering\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
 C:\Users\Sjoerd\Dropbox\School\Jaar3\Herkansingen\Software engineering\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.Properties.Resources.resources
 C:\Users\Sjoerd\Dropbox\School\Jaar3\Herkansingen\Software engineering\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.csproj.GenerateResource.Cache
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\bin\Debug\Sudoku.exe.config
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Interop.Sudoku.dll
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.csproj.ResolveComReference.cache
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku.exe
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku.pdb
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\bin\Debug\Sudoku.exe
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\bin\Debug\Sudoku.pdb
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.csprojResolveAssemblyReference.cache
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\View\BoxContainer.baml
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\View\BoxContainer.g.cs
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\View\MainWindow.g.cs
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\App.g.cs
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\GeneratedInternalTypeHelper.g.cs
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.cache
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku_MarkupCompile.lref
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\View\MainWindow.baml
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\Sudoku.g.resources
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.Properties.Resources.resources
+C:\Users\Sjoerd\Documents\School\Jaar2\Sudoku\Sudoku-WPF\Sudoku\Sudoku\obj\Debug\SudokuGame.csproj.GenerateResource.Cache
