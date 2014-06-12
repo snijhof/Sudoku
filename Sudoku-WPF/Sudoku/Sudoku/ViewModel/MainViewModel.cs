@@ -16,8 +16,6 @@ namespace SudokuGame.ViewModel
 
         private String[,] gameValues = new String[9, 9];
 
-        private int selectedValue;
-
         #region DataBinding
 
         public BoxContainerViewModel TopLeftContent { get; set; }
@@ -45,12 +43,12 @@ namespace SudokuGame.ViewModel
             short counter = 0;
             short[] values = new short[9];
 
-            for (short x = 0; x < 9; x++)
+            for (short x = 1; x < 10; x++)
             {
-                for (short y = 0; y < 9; y++)
+                for (short y = 1; y < 10; y++)
                 {
                     myGame.get(x, y, out value);
-                    values[y] = value;
+                    values[y - 1] = value;
                 }
 
                 switch (rowCounter) 

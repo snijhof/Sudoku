@@ -40,6 +40,7 @@ namespace SudokuGame.ViewModel
                 if (succeeded == 1)
                 {
                     topLeft = value;
+                    OnPropertyChanged("TopLeft");
                 }
             }
         }
@@ -134,6 +135,18 @@ namespace SudokuGame.ViewModel
             }
         }
 
+        public bool TopLeftEnabled { get; set; }
+        public bool TopCenterEnabled { get; set; }
+        public bool TopRightEnabled { get; set; }
+
+        public bool MiddleLeftEnabled { get; set; }
+        public bool MiddleCenterEnabled { get; set; }
+        public bool MiddleRightEnabled { get; set; }
+
+        public bool BottomLeftEnabled { get; set; }
+        public bool BottomCenterEnabled { get; set; }
+        public bool BottomRightEnabled { get; set; }
+
         #endregion
 
         public BoxContainerViewModel(short x, short y, short[] values)
@@ -142,18 +155,35 @@ namespace SudokuGame.ViewModel
             this.xPosition = x;
             this.yPosition = y;
 
+            Console.WriteLine("X: " + x + ", Y: " + y);
+            for (int i = 0; i < values.Length; i++ )
+            {
+                Console.WriteLine("Index: " + i + ", value: " + values[i]);
+            }
+
             // Set the values
-            TopLeft = values[0];
-            TopCenter = values[1];
-            TopRight = values[2];
+            topLeft = values[0];
+            topCenter = values[1];
+            topRight = values[2];
 
-            MiddleLeft = values[3];
-            MiddleCenter = values[4];
-            MiddleRight = values[5];
+            middleLeft = values[3];
+            middleCenter = values[4];
+            middleRight = values[5];
 
-            BottomLeft = values[6];
-            BottomCenter = values[7];
-            BottomRight = values[8];
+            bottomLeft = values[6];
+            bottomCenter = values[7];
+            bottomRight = values[8];
+
+            // Enable and disable the comboboxes
+            TopLeftEnabled = values[0] != 0 ? false : true;
+            TopCenterEnabled = values[1] != 0 ? false : true;
+            TopRightEnabled = values[2] != 0 ? false : true;
+            MiddleLeftEnabled = values[3] != 0 ? false : true;
+            MiddleCenterEnabled = values[4] != 0 ? false : true;
+            MiddleRightEnabled = values[5] != 0 ? false : true;
+            BottomLeftEnabled = values[6] != 0 ? false : true;
+            BottomCenterEnabled = values[7] != 0 ? false : true;
+            BottomRightEnabled = values[8] != 0 ? false : true;
         }
 
         #region Relay Commands
