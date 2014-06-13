@@ -37,57 +37,92 @@ namespace SudokuGame.ViewModel
             myGame.create();
             myGame.write(out canWrite);
 
-            Console.Write(canWrite);
+            //Console.Write(canWrite);
 
-            short rowCounter = 0;
-            short counter = 0;
+            short rowCounter = 1;
+            short counter = 1;
             short[] values = new short[9];
 
-            for (short x = 1; x < 10; x++)
+            short y = 1;
+            short x = 1;
+
+            short maxY = 4;
+            short maxX = 4;
+
+            for (short a = 1; a < 10; a++)
             {
-                for (short y = 1; y < 10; y++)
+                for (short b = 1; b < 10; b++)
                 {
-                    myGame.get(x, y, out value);
-                    values[y - 1] = value;
+                    myGame.get(b, a, out value);
+                    Console.Write(value);
                 }
-
-                switch (rowCounter) 
-                {
-                    case 0:
-                        switch (counter)
-                        {
-                            case 0: TopLeftContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("TopLeftContent"); break;
-                            case 1: TopCenterContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("TopCenterContent"); break;
-                            case 2: TopRightContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("TopRightContent"); break;
-                        }
-                        break;
-                    case 1:
-                        switch (counter)
-                        {
-                            case 0: MiddleLeftContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("MiddleRightContent"); break;
-                            case 1: MiddleCenterContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("MiddleCenterContent"); break;
-                            case 2: MiddleRightContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("MiddleLeftContent"); break;
-                        }
-                        break;
-                    case 2:
-                        switch (counter)
-                        {
-                            case 0: BottomLeftContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("BottomRightContent"); break;
-                            case 1: BottomCenterContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("BottomCenterContent"); break;
-                            case 2: BottomRightContent = new BoxContainerViewModel(counter, rowCounter, values); OnPropertyChanged("BottomLeftContent"); break;
-                        }
-                        break;
-                }
-
-                // Increase the row counter if counter is 2
-                if (counter == 2)
-                {
-                    counter = 0;
-                    rowCounter++;
-                }
-                else
-                    counter++;
+                Console.WriteLine("");
             }
+
+
+                for (short i = 1; i < 10; i++)
+                {
+                    int arrayIndex = 0;
+                    while (y < maxY)
+                    {
+                        while (x < maxX)
+                        {
+                            myGame.get(x, y, out value);
+                            values[arrayIndex] = value;
+                            arrayIndex++;
+                            x++;
+                        }
+                        x -= 3;
+                        y++;
+                    }
+
+                    x = maxX;
+
+                    switch (rowCounter)
+                    {
+                        case 1:
+                            switch (counter)
+                            {
+                                case 1: TopLeftContent = new BoxContainerViewModel(1, 1, values); OnPropertyChanged("TopLeftContent"); break;
+                                case 2: TopCenterContent = new BoxContainerViewModel(4, 1, values); OnPropertyChanged("TopCenterContent"); break;
+                                case 3: TopRightContent = new BoxContainerViewModel(7, 1, values); OnPropertyChanged("TopRightContent"); break;
+                            }
+                            break;
+                        case 2:
+                            switch (counter)
+                            {
+                                case 1: MiddleLeftContent = new BoxContainerViewModel(1, 4, values); OnPropertyChanged("MiddleRightContent"); break;
+                                case 2: MiddleCenterContent = new BoxContainerViewModel(4, 4, values); OnPropertyChanged("MiddleCenterContent"); break;
+                                case 3: MiddleRightContent = new BoxContainerViewModel(7, 4, values); OnPropertyChanged("MiddleLeftContent"); break;
+                            }
+                            break;
+                        case 3:
+                            switch (counter)
+                            {
+                                case 1: BottomLeftContent = new BoxContainerViewModel(1, 7, values); OnPropertyChanged("BottomRightContent"); break;
+                                case 2: BottomCenterContent = new BoxContainerViewModel(4, 7, values); OnPropertyChanged("BottomCenterContent"); break;
+                                case 3: BottomRightContent = new BoxContainerViewModel(7, 7, values); OnPropertyChanged("BottomLeftContent"); break;
+                            }
+                            break;
+                    }
+
+                    // Increase the row counter if counter is 3
+                    if (counter == 3)
+                    {
+                        x = 1;
+                        counter = 1;
+                        rowCounter++;
+                        maxY += 3;
+                        maxX = 4;
+                    }
+                    else
+                    {
+                        y = maxY;
+                        y -= 3;
+                        maxX += 3;
+                        counter++;
+                    }
+                }
         }
 
         protected override void initRelayCommands()

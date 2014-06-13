@@ -52,7 +52,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                topCenter = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    topCenter = value;
+                    OnPropertyChanged("TopCenter");
+                }
             }
         }
         public short TopRight
@@ -63,7 +68,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                topRight = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    topRight = value;
+                    OnPropertyChanged("TopRight");
+                }
             }
         }
 
@@ -75,7 +85,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                middleLeft = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    middleLeft = value;
+                    OnPropertyChanged("MiddleLeft");
+                }
             }
         }
         public short MiddleCenter
@@ -86,7 +101,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                middleCenter = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    middleCenter = value;
+                    OnPropertyChanged("MiddleCenter");
+                }
             }
         }
         public short MiddleRight
@@ -97,7 +117,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                middleRight = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    middleRight = value;
+                    OnPropertyChanged("MiddleRight");
+                }
             }
         }
 
@@ -109,7 +134,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                bottomLeft = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    bottomLeft = value;
+                    OnPropertyChanged("BottomLeft");
+                }
             }
         }
         public short BottomCenter
@@ -120,7 +150,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                bottomCenter = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    bottomCenter = value;
+                    OnPropertyChanged("BottomCenter");
+                }
             }
         }
         public short BottomRight
@@ -131,7 +166,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                bottomRight = value;
+                myGame.set(xPosition, yPosition, value, out succeeded);
+                if (succeeded == 1)
+                {
+                    bottomRight = value;
+                    OnPropertyChanged("BottomRight");
+                }
             }
         }
 
