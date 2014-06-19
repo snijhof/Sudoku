@@ -27,6 +27,7 @@ namespace SudokuGame.ViewModel
         public RelayCommand CheatCommand { get; set; }
         public RelayCommand HintCommand { get; set; }
         public RelayCommand ValidateCommand { get; set; }
+        public RelayCommand NewGameCommand { get; set; }
 
         public short XValue { get; set; }
         public short YValue { get; set; }
@@ -235,13 +236,10 @@ namespace SudokuGame.ViewModel
 
             myGame.isValid(out valid);
 
-            if (valid == 0)
+            if (valid == 1)
             {
                 // You have won the game!
-                MessageBox.Show("You have won the game!", "Winner!", MessageBoxButton.OK);
-
-                // Start a new board
-                Start();
+                MessageBox.Show("Everything is correct!", "No mistakes!", MessageBoxButton.OK);
             }
             else
             {
@@ -252,7 +250,19 @@ namespace SudokuGame.ViewModel
 
         public void Cheat(object commandParam)
         {
-            
+            int succeeded;
+            for (int i = 0; i < 1000; i++ )
+            {
+                short x, y, value;
+
+                myGame.hint(out x, out y, out value, out succeeded);
+                getBoxContainerViewModel(x, y).Submit(x, y, value, succeeded);
+            }
+        }
+
+        public void NewGame(object commandParam)
+        {
+            Start();
         }
 
         #endregion
@@ -263,6 +273,7 @@ namespace SudokuGame.ViewModel
             CheatCommand = new RelayCommand(Cheat);
             HintCommand = new RelayCommand(Hint);
             ValidateCommand = new RelayCommand(Validate);
+            NewGameCommand = new RelayCommand(NewGame);
         }
     }
 }

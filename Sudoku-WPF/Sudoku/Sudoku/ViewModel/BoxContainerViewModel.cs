@@ -343,7 +343,7 @@ namespace SudokuGame.ViewModel
             {
                 x -= 3;
             }
-            else if (x > 7)
+            else if (x >= 7)
             {
                 x -= 6;
             }
@@ -352,7 +352,7 @@ namespace SudokuGame.ViewModel
             {
                 y -= 3;
             }
-            else if (y > 7)
+            else if (y >= 7)
             {
                 y -= 6;
             }

@@ -33,10 +33,11 @@
         <ComboBox SelectedIndex="{Binding Value}" ItemsSource="{Binding Values}" HorizontalAlignment="Left" Margin="115,72,0,0" VerticalAlignment="Top" Width="52" Height="26"/>
         <Button Content="Submit" Command="{Binding SubmitCommand}" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" Height="24"/>
 
-        <Button Content="Hint" Command="{Binding HintCommand}" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
-        <Button Content="Cheat" Command="{Binding CheatCommand}" HorizontalAlignment="Left" Margin="10,49,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
-        <Button Content="Validate" Command="{Binding ValidateCommand}" HorizontalAlignment="Left" Margin="10,78,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
-
+        <Button Content="Hint" Command="{Binding HintCommand}" HorizontalAlignment="Left" Margin="10,101,0,0" Grid.Row="1" VerticalAlignment="Top" Width="157" Height="24" Grid.RowSpan="2"/>
+        <Button Content="Cheat" Command="{Binding CheatCommand}" HorizontalAlignment="Left" Margin="10,20,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
+        <Button Content="Validate" Command="{Binding ValidateCommand}" HorizontalAlignment="Left" Margin="10,49,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
+        <Button Content="New game" Command="{Binding NewGameCommand}" HorizontalAlignment="Left" Margin="10,78,0,0" Grid.Row="2" VerticalAlignment="Top" Width="157" Height="24"/>
+        
         <!-- Sudoku board -->
         <ContentControl x:Name="TopLeftContainer" Content="{Binding TopLeftContent}" Margin="0,0,0,0" Grid.Column="1"/>
         <ContentControl x:Name="TopCenterContainer" Content="{Binding TopCenterContent}" Margin="0,0,0,0" Grid.Column="2"/>
