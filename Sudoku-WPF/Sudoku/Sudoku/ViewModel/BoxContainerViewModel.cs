@@ -4,31 +4,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace SudokuGame.ViewModel
 {
     class BoxContainerViewModel : AbstractViewModel
     {
-        private String[] values = { "", "1", "2", "3", "4", "5", "6", "7", "8", "9" };
         private IGame myGame = new Game();
         private short xPosition;
         private short yPosition;
-        private short topLeft, topCenter, topRight;
-        private short middleLeft, middleCenter, middleRight;
-        private short bottomLeft, bottomCenter, bottomRight;
+        private string topLeft, topCenter, topRight;
+        private string middleLeft, middleCenter, middleRight;
+        private string bottomLeft, bottomCenter, bottomRight;
         private int succeeded;
+
+        private Brush topLeftColor, topCenterColor, topRightColor;
+        private Brush middleLeftColor, middleCenterColor, middleRightColor;
+        private Brush bottomLeftColor, bottomCenterColor, bottomRightColor;
 
         #region DataBinding
 
-        public String[] Values 
-        { 
-            get
-            {
-                return values;
-            }
-        }
-
-        public short TopLeft 
+        public string TopLeft 
         { 
             get
             {
@@ -36,15 +32,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    topLeft = value;
-                    OnPropertyChanged("TopLeft");
+                    BorderColorTopLeft = new SolidColorBrush(Colors.Red);
                 }
+                topLeft = value;
+                OnPropertyChanged("TopLeft");
             }
         }
-        public short TopCenter
+        public string TopCenter
         {
             get
             {
@@ -52,15 +48,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    topCenter = value;
-                    OnPropertyChanged("TopCenter");
+                    BorderColorTopCenter = new SolidColorBrush(Colors.Red);
                 }
+                topCenter = value;
+                OnPropertyChanged("TopCenter");
             }
         }
-        public short TopRight
+        public string TopRight
         {
             get
             {
@@ -68,16 +64,16 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    topRight = value;
-                    OnPropertyChanged("TopRight");
+                    BorderColorTopRight = new SolidColorBrush(Colors.Red);
                 }
+                topRight = value;
+                OnPropertyChanged("TopRight");
             }
         }
 
-        public short MiddleLeft
+        public string MiddleLeft
         {
             get
             {
@@ -85,15 +81,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    middleLeft = value;
-                    OnPropertyChanged("MiddleLeft");
+                    BorderColorMiddleLeft = new SolidColorBrush(Colors.Red);
                 }
+                middleLeft = value;
+                OnPropertyChanged("MiddleLeft");
             }
         }
-        public short MiddleCenter
+        public string MiddleCenter
         {
             get
             {
@@ -101,15 +97,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    middleCenter = value;
-                    OnPropertyChanged("MiddleCenter");
+                    BorderColorMiddleCenter = new SolidColorBrush(Colors.Red);
                 }
+                middleCenter = value;
+                OnPropertyChanged("MiddleCenter");
             }
         }
-        public short MiddleRight
+        public string MiddleRight
         {
             get
             {
@@ -117,16 +113,16 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    middleRight = value;
-                    OnPropertyChanged("MiddleRight");
+                    BorderColorMiddleRight = new SolidColorBrush(Colors.Red);
                 }
+                middleRight = value;
+                OnPropertyChanged("MiddleRight");
             }
         }
 
-        public short BottomLeft
+        public string BottomLeft
         {
             get
             {
@@ -134,15 +130,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    bottomLeft = value;
-                    OnPropertyChanged("BottomLeft");
+                    BorderColorBottomLeft = new SolidColorBrush(Colors.Red);
                 }
+                bottomLeft = value;
+                OnPropertyChanged("BottomLeft");
             }
         }
-        public short BottomCenter
+        public string BottomCenter
         {
             get
             {
@@ -150,15 +146,15 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    bottomCenter = value;
-                    OnPropertyChanged("BottomCenter");
+                    BorderColorBottomCenter = new SolidColorBrush(Colors.Red);
                 }
+                bottomCenter = value;
+                OnPropertyChanged("BottomCenter");
             }
         }
-        public short BottomRight
+        public string BottomRight
         {
             get
             {
@@ -166,12 +162,12 @@ namespace SudokuGame.ViewModel
             }
             set
             {
-                myGame.set(xPosition, yPosition, value, out succeeded);
-                if (succeeded == 1)
+                if (succeeded == 0)
                 {
-                    bottomRight = value;
-                    OnPropertyChanged("BottomRight");
+                    BorderColorBottomRight = new SolidColorBrush(Colors.Red);
                 }
+                bottomRight = value;
+                OnPropertyChanged("BottomRight");
             }
         }
 
@@ -187,32 +183,134 @@ namespace SudokuGame.ViewModel
         public bool BottomCenterEnabled { get; set; }
         public bool BottomRightEnabled { get; set; }
 
+        public Brush BorderColorTopLeft
+        {
+            get
+            {
+                return topLeftColor;
+            }
+            set
+            {
+                topLeftColor = value;
+                OnPropertyChanged("BorderColorTopLeft");
+            }
+        }
+        public Brush BorderColorTopCenter
+        {
+            get
+            {
+                return topCenterColor;
+            }
+            set
+            {
+                topCenterColor = value;
+                OnPropertyChanged("BorderColorTopCenter");
+            }
+        }
+        public Brush BorderColorTopRight
+        {
+            get
+            {
+                return topRightColor;
+            }
+            set
+            {
+                topRightColor = value;
+                OnPropertyChanged("BorderColorTopRight");
+            }
+        }
+
+        public Brush BorderColorMiddleLeft
+        {
+            get
+            {
+                return middleLeftColor;
+            }
+            set
+            {
+                middleLeftColor = value;
+                OnPropertyChanged("BorderColorMiddleLeft");
+
+            }
+        }
+        public Brush BorderColorMiddleCenter
+        {
+            get
+            {
+                return middleCenterColor;
+            }
+            set
+            {
+                middleCenterColor = value;
+                OnPropertyChanged("BorderColorMiddleCenter");
+            }
+        }
+        public Brush BorderColorMiddleRight
+        {
+            get
+            {
+                return middleRightColor;
+            }
+            set
+            {
+                middleRightColor = value;
+                OnPropertyChanged("BorderColorMiddleRight");
+            }
+        }
+
+        public Brush BorderColorBottomLeft
+        {
+            get
+            {
+                return bottomLeftColor;
+            }
+            set
+            {
+                bottomLeftColor = value;
+                OnPropertyChanged("BorderColorBottomLeft");
+            }
+        }
+        public Brush BorderColorBottomCenter
+        {
+            get
+            {
+                return bottomCenterColor;
+            }
+            set
+            {
+                bottomCenterColor = value;
+                OnPropertyChanged("BorderColorBottomCenter");
+            }
+        }
+        public Brush BorderColorBottomRight
+        {
+            get
+            {
+                return bottomRightColor;
+            }
+            set
+            {
+                bottomRightColor = value;
+                OnPropertyChanged("BorderColorBottomRight");
+            }
+        }
+
         #endregion
 
-        public BoxContainerViewModel(short x, short y, short[] values)
+        public BoxContainerViewModel(short[] values)
         {
-            // Set the position of the container
-            this.xPosition = x;
-            this.yPosition = y;
-
-            Console.WriteLine("X: " + x + ", Y: " + y);
-            for (int i = 0; i < values.Length; i++ )
-            {
-                Console.WriteLine("Index: " + i + ", value: " + values[i]);
-            }
-
             // Set the values
-            topLeft = values[0];
-            topCenter = values[1];
-            topRight = values[2];
+            topLeft = values[0] == 0 ? "" : "" + values[0];
+            topCenter = values[1] == 0 ? "" : "" + values[1];
+            topRight = values[2] == 0 ? "" : "" + values[2];
 
-            middleLeft = values[3];
-            middleCenter = values[4];
-            middleRight = values[5];
+            middleLeft = values[3] == 0 ? "" : "" + values[3];
+            middleCenter = values[4] == 0 ? "" : "" + values[4];
+            middleRight = values[5] == 0 ? "" : "" + values[5];
 
-            bottomLeft = values[6];
-            bottomCenter = values[7];
-            bottomRight = values[8];
+            bottomLeft = values[6] == 0 ? "" : "" + values[6];
+            bottomCenter = values[7] == 0 ? "" : "" + values[7];
+            bottomRight = values[8] == 0 ? "" : "" + values[8];
 
             // Enable and disable the comboboxes
             TopLeftEnabled = values[0] != 0 ? false : true;
@@ -224,17 +322,67 @@ namespace SudokuGame.ViewModel
             BottomLeftEnabled = values[6] != 0 ? false : true;
             BottomCenterEnabled = values[7] != 0 ? false : true;
             BottomRightEnabled = values[8] != 0 ? false : true;
+
+            // Set the borders
+            topLeftColor = new SolidColorBrush(Colors.Gray);
+            topCenterColor = new SolidColorBrush(Colors.Gray);
+            topRightColor = new SolidColorBrush(Colors.Gray);
+            middleLeftColor = new SolidColorBrush(Colors.Gray);
+            middleCenterColor = new SolidColorBrush(Colors.Gray);
+            middleRightColor = new SolidColorBrush(Colors.Gray);
+            bottomLeftColor = new SolidColorBrush(Colors.Gray);
+            bottomCenterColor = new SolidColorBrush(Colors.Gray);
+            bottomRightColor = new SolidColorBrush(Colors.Gray);
         }
 
-        #region Relay Commands
-
-        public void method()
+        public void Submit(short x, short y, short value, int succeeded) 
         {
+            this.succeeded = succeeded;
 
+            if (x < 7 && x > 3)
+            {
+                x -= 3;
+            }
+            else if (x > 7)
+            {
+                x -= 6;
+            }
+
+            if (y < 7 && y > 3)
+            {
+                y -= 3;
+            }
+            else if (y > 7)
+            {
+                y -= 6;
+            }
+
+            switch (y)
+            {
+                case 1: 
+                    switch (x)
+                    {
+                        case 1: TopLeft = "" + value; break;
+                        case 2: TopCenter = "" + value; break;
+                        case 3: TopRight = "" + value; break;
+                    } break;
+                case 2: 
+                    switch (x)
+                    {
+                        case 1: MiddleLeft = "" + value; break;
+                        case 2: MiddleCenter = "" + value; break;
+                        case 3: MiddleRight = "" + value; break;
+                    } break;
+                case 3: 
+                    switch (x)
+                    {
+                        case 1: BottomLeft = "" + value; break;
+                        case 2: BottomCenter = "" + value; break;
+                        case 3: BottomRight = "" + value; break;
+                    } break;
+            }
         }
-
-        #endregion
-
+        
         protected override void initRelayCommands()
         {
         }
