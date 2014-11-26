@@ -36,8 +36,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorTopLeft = new SolidColorBrush(Colors.Red);
                 }
-                topLeft = value;
-                OnPropertyChanged("TopLeft");
+                else
+                {
+                    topLeft = value;
+                    OnPropertyChanged("TopLeft");
+                }
             }
         }
         public string TopCenter
@@ -52,8 +55,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorTopCenter = new SolidColorBrush(Colors.Red);
                 }
-                topCenter = value;
-                OnPropertyChanged("TopCenter");
+                else
+                {
+                    topCenter = value;
+                    OnPropertyChanged("TopCenter");
+                }
             }
         }
         public string TopRight
@@ -68,8 +74,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorTopRight = new SolidColorBrush(Colors.Red);
                 }
-                topRight = value;
-                OnPropertyChanged("TopRight");
+                else
+                {
+                    topRight = value;
+                    OnPropertyChanged("TopRight");
+                }
             }
         }
 
@@ -85,8 +94,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorMiddleLeft = new SolidColorBrush(Colors.Red);
                 }
-                middleLeft = value;
-                OnPropertyChanged("MiddleLeft");
+                else
+                {
+                    middleLeft = value;
+                    OnPropertyChanged("MiddleLeft");
+                }
             }
         }
         public string MiddleCenter
@@ -101,8 +113,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorMiddleCenter = new SolidColorBrush(Colors.Red);
                 }
-                middleCenter = value;
-                OnPropertyChanged("MiddleCenter");
+                else
+                {
+                    middleCenter = value;
+                    OnPropertyChanged("MiddleCenter");
+                }
             }
         }
         public string MiddleRight
@@ -117,8 +132,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorMiddleRight = new SolidColorBrush(Colors.Red);
                 }
-                middleRight = value;
-                OnPropertyChanged("MiddleRight");
+                else
+                {
+                    middleRight = value;
+                    OnPropertyChanged("MiddleRight");
+                }
             }
         }
 
@@ -134,8 +152,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorBottomLeft = new SolidColorBrush(Colors.Red);
                 }
-                bottomLeft = value;
-                OnPropertyChanged("BottomLeft");
+                else
+                {
+                    bottomLeft = value;
+                    OnPropertyChanged("BottomLeft");
+                }
             }
         }
         public string BottomCenter
@@ -150,8 +171,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorBottomCenter = new SolidColorBrush(Colors.Red);
                 }
-                bottomCenter = value;
-                OnPropertyChanged("BottomCenter");
+                else
+                {
+                    bottomCenter = value;
+                    OnPropertyChanged("BottomCenter");
+                }
             }
         }
         public string BottomRight
@@ -166,8 +190,11 @@ namespace SudokuGame.ViewModel
                 {
                     BorderColorBottomRight = new SolidColorBrush(Colors.Red);
                 }
-                bottomRight = value;
-                OnPropertyChanged("BottomRight");
+                else
+                {
+                    bottomRight = value;
+                    OnPropertyChanged("BottomRight");
+                }
             }
         }
 
